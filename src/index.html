@@ -1,13 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>AppGoing</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="../assets/tailwind.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif; -->
 </head>
-<body>
+<body class="font-poppins text-gray-600">
   <app-root></app-root>
 </body>
 </html>
+<script>
+    document.querySelector('#open_sidebar').addEventListener('click', function () {
+        document.querySelector('#sidebar').classList.remove('-right-80')
+        document.querySelector('#sidebar').classList.add('right-0')
+
+        document.querySelector('#sidebar_wrapbar').classList.remove('opacity-0')
+        document.querySelector('#sidebar_wrapbar').classList.remove('invisible')
+    });
+
+    document.body.addEventListener('click', function (event) {
+        if(event.target.id === 'sidebar_wrapbar') {
+            document.querySelector('#sidebar').classList.add('-right-80')
+            document.querySelector('#sidebar').classList.remove('right-0')
+
+            document.querySelector('#sidebar_wrapbar').classList.add('opacity-0')
+            document.querySelector('#sidebar_wrapbar').classList.add('invisible')
+        }
+    });
+</script>
